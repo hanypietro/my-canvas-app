@@ -1,2 +1,2 @@
-# my-canvas-app
+# canvas-app
 Canvas app
