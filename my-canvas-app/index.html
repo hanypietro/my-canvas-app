@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Drawing App</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: url('images/background.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #fff;
+            text-shadow: 2px 2px 4px #000;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .controls label, .controls button {
+            margin: 5px;
+        }
+
+        .controls input[type="range"], .controls input[type="color"] {
+            margin-left: 10px;
+        }
+
+        .controls button {
+            padding: 5px 10px;
+            border: none;
+            background-color: #007BFF;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .controls button:hover {
+            background-color: #0056b3;
+        }
+
+        canvas {
+            border: 2px solid #000;
+            background: url('images/canvas-background.jpg') no-repeat center center;
+            background-size: cover;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>Canvas Drawing App</h1>
+    <div class="container">
+        <div class="controls">
+            <label>Brush Size: <input type="range" id="brushSize" min="1" max="20" value="5"></label>
+            <label>Brush Color: <input type="color" id="brushColor" value="#000000"></label>
+            <button id="clearCanvas">Clear Canvas</button>
+            <button id="saveDrawing">Save as PNG</button>
+            <button id="saveDrawingJPEG">Save as JPEG</button>
+            <label for="loadDrawing">Load Drawing:</label>
+            <input type="file" id="loadDrawing" accept="image/png">
+            <button id="fillCanvas">Fill Canvas</button>
+            <button id="eraserTool">Eraser</button>
+            <button id="undo">Undo</button>
+            <button id="redo">Redo</button>
+        </div>
+        <canvas id="drawingCanvas" width="800" height="600"></canvas>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
